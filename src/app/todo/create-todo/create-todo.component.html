@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container todobox">
+    <form (ngSubmit)="onSubmit()">
+        <div class="todo-heading text-center">
+            <label>Create Todo</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title" placeholder="Title">
+            <label for="title">Title</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" placeholder="Description">
+            <label for="description">Description</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-submit">Create</button>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="left-side">
+    <div *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </div>
+    <div class="table-content">
+        <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div *ngIf="!users || !users.length; else showTable">
+                    <tr>
+                        <td class="mat-cell" [attr.colspan]="users.length">
+                            No data available in table
+                        </td>
+                    </tr>
+                </div>
+                <ng-template #showTable>
+                    <tr *ngFor="let user of users">
+                        <td>{{user?.id}}</td>
+                        <td>{{user?.email}}</td>
+                        <td>{{user?.admin}}</td>
+                    </tr>
+                </ng-template>
+            </tbody>
+        </table>
+    </div>
+</div>

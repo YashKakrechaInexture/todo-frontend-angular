@@ -1,0 +1,29 @@
+<div class="btn" (click)="toggleClick($event)" [ngStyle]="{'left': isClicked ? '260px' : '10px'}">
+   <span class="bi bi-list" [ngClass]="{'bi-list': !isClicked, 'bi-x': isClicked}"></span>
+</div>
+<nav class="sidebar" [ngClass]="{'show': isClicked}">
+   <div class="text">
+      Todo App
+   </div>
+   <ul class="main_side">
+      <li class="active"><a routerLink="/home">Dashboard</a></li>
+      <li id="1" (click)="dropdown($event)">
+         <a>Todos
+            <span class="bi bi-caret-down"></span>
+         </a>
+         <ul class="item-show-1">
+            <li><a routerLink="/create-todo">Create Todo</a></li>
+            <li><a routerLink="/todos">Todo List</a></li>
+         </ul>
+      </li>
+      <li id="2" (click)="dropdown($event)">
+         <a>Users
+            <span class="bi bi-caret-down"></span>
+         </a>
+         <ul class="item-show-2">
+            <li><a routerLink="/create-user">Create Todo</a></li>
+            <li><a routerLink="/users">User List</a></li>
+         </ul>
+      </li>
+   </ul>
+</nav>

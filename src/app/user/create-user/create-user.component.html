@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container userbox">
+    <form (ngSubmit)="onSubmit()">
+        <div class="user-heading text-center">
+            <label>Create User</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="password">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-submit">Create</button>
+    </form>
+</div>
