@@ -1,66 +1,21 @@
-<!-- <div class="wrapper"> -->
-    <nav class="navbar navbar-expand-lg navbar-light navover" style="background-color: #fcd47f;" [ngClass]="{ 'clicked': isClicked, 'disabled': !isClicked }">
-        <!-- <button class="navbar-toggler" style="color: rgb(20, 51, 17);" type="button" data-bs-toggle="collapse" data-bs-target="#mainSidebarToggler" aria-controls="mainSidebarToggler" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <i class="bi bi-house-door-fill icons" style="color: crimson;"></i>
-                        <label>Ahmedabad</label>
-                    </li>
-                    <li class="nav-item">
-                        <i class="bi bi-geo-alt-fill icons" style="color: crimson;"></i>
-                        <label>Gujarat, India.</label>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <button class="btn btn-outline-danger" type="submit" (click)="logout()">Logout</button>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-light navover" style="background-color: #fcd47f;"
+    [ngClass]="{ 'clicked': isClicked, 'disabled': !isClicked }">
+
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <i class="bi bi-house-door-fill icons" style="color: crimson;"></i>
+                    <label>Ahmedabad</label>
+                </li>
+                <li class="nav-item">
+                    <i class="bi bi-geo-alt-fill icons" style="color: crimson;"></i>
+                    <label>Gujarat, India.</label>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <button class="btn btn-outline-danger" type="submit" (click)="logout()">Logout</button>
             </div>
         </div>
-    </nav>
-    <!-- <div class="nav-sidebar" id="mainSidebarToggler">
-        <div class="main-sidebar">
-            <nav class="navbar p-3 navbar-dark bg-dark d-flex d-none d-md-block sidebar">
-                <div class="sidebar-sticky">
-                    <a class="navbar-brand" routerLink="/home">Todo App</a>
-                    <div class="collapse navbar-collapse" id="navbarToggler">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav flex-column nav-pills nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link navbar-toggler" type="button" (click)="todoVisibilityToggle()">Todo</button>
-                                <div *ngIf="isTodoVisible">
-                                    <ul id="todoDropdown" class="navbar-nav me-auto mb-2 mb-lg-0 nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link sub-link" aria-current="page" routerLink="/create-todo">Create Todo</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link sub-link" routerLink="/todos">Todos List</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link navbar-toggler" type="button" (click)="userVisibilityToggle()">Users</button>
-                                <div *ngIf="isUserVisible">
-                                    <ul id="userDropdown" class="navbar-nav me-auto mb-2 mb-lg-0 nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link sub-link" aria-current="page" routerLink="/create-user">Create User</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link sub-link" routerLink="/users">Users List</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div> -->
-<!-- </div> -->
+    </div>
+</nav>
