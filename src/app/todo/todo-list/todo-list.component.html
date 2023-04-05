@@ -1,16 +1,17 @@
 <app-header></app-header>
-<div class="left-side">
+<div>
     <div *ngIf="isLoading">
         <app-spinner></app-spinner>
     </div>
     <div class="table-content">
-        <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <table class="table table-bordered table-striped table-hover" id="todo-table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Created By</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,14 @@
                         <td>{{todo?.title}}</td>
                         <td>{{todo?.description}}</td>
                         <td>{{todo?.user?.email}}</td>
+                        <td>
+                            <div *ngIf="todo?.status==='TODO'; else btn">
+                                <button class="btn btn-success" (click)="completeTodo(todo?.id)">Complete</button>
+                            </div>
+                            <ng-template #btn>
+                                COMPLETED
+                            </ng-template>
+                        </td>
                     </tr>
                 </ng-template>
             </tbody>

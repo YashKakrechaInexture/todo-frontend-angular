@@ -25,4 +25,8 @@ export class TodoService {
   createTodo(todo: Todo){
     return this.httpClient.post<Todo>(this.hostname,todo);
   }
+
+  completeTodo(id: number){
+    return this.httpClient.patch<Todo>(this.hostname+"/complete/"+id, null);
+  }
 }

@@ -35,12 +35,28 @@ export class TodoListComponent implements OnInit, OnDestroy {
   }
 
   private getTodos(){
+    this.isLoading = true;
     this.todoService.getTodos().subscribe(
       (response: Todo[])=>{
         this.todos = response;
         this.dtOptions.data = this.todos;
         this.dtTrigger.next(this.todos);
         this.isLoading = false;
+      },error=>{
+        this.isLoading = false;
+        this.toast.error({detail:"ERROR", summary:'Something Went Wrong!', duration:5000});
+      }
+    );
+  }
+
+  public completeTodo(id: any){
+    this.isLoading = true;
+    this.todoService.completeTodo(id).subscribe(
+      (response: Todo)=>{
+        this.isLoading = false;
+        this.toast.success({detail:"SUCCESS", summary:'Todo Completed!', duration:5000});
+        $('#todo-table').DataTable().destroy();
+        this.getTodos();
       },error=>{
         this.isLoading = false;
         this.toast.error({detail:"ERROR", summary:'Something Went Wrong!', duration:5000});

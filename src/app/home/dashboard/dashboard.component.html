@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="filter-icons">
+        <div *ngFor="let filterIcon of filterIcons" class="col-md-2 outer-icon-box">
+            <div class="inner-icon-box text-center btn" [class]="filterIcon.css">
+                <label class="heading">{{filterIcon.title}}</label>
+                <label class="value">{{filterIcon.value}}</label>
+            </div>
+        </div>
+        <!-- <div class="icon-box col-md-2 text-center">
+            <label class="heading">To Do</label>
+            <label class="value">0</label>
+        </div> -->
+    </div>
+</div>

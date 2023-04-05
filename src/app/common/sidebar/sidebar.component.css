@@ -112,7 +112,7 @@ nav ul li.active ul {
 
 nav ul ul {
   position: static;
-  display: none;
+  /* display: none; */
 }
 
 nav ul.show {
@@ -156,7 +156,7 @@ nav ul li a span {
 }
 
 nav ul li a span.rotate {
-  transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .content {
@@ -167,4 +167,8 @@ nav ul li a span.rotate {
   color: #202020;
   z-index: -1;
   text-align: center;
+}
+
+.close-dropdown{
+  display: none;
 }

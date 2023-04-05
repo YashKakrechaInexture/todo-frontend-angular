@@ -7,7 +7,7 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent implements OnInit,OnDestroy {
   email: String;

@@ -19,6 +19,7 @@ import { NgToastModule } from 'ng-angular-popup';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     SpinnerComponent,
     CreateUserComponent,
     UserListComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

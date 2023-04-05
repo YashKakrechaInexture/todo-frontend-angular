@@ -17,36 +17,61 @@ export class SidebarComponent implements OnInit{
   }
   ngOnInit(): void {
     this.clickEvent.emit(this.isClicked);
+      // const ulElement = this.el.nativeElement.querySelector(`.item-show-${id}`) as HTMLElement;
+      // const isActive = ulElement.querySelector('.active') !== null;
+      // if(isActive){
+      //   this.renderer.setStyle(ulElement, 'display', 'block');
+      // } else {
+      //   this.renderer.setStyle(ulElement, 'display', displayValue);
+      // }
   }
 
   toggleClick(event:any) {
     this.isClicked = !this.isClicked;
     this.clickEvent.emit(this.isClicked);
+    if (this.isClicked) {
+      // Move the main element to the right when the sidebar is opened
+      // this.renderer.setStyle(document.body, 'position', 'relative');
+      // this.renderer.setStyle(document.body, 'left', '250px');
+      // this.renderer.setStyle(document.body, 'transition', 'left ease-in-out');
+      this.renderer.setStyle(document.body, 'margin-left', '250px');
+      this.renderer.setStyle(document.body, 'transition-timing-function', 'ease');
+      this.renderer.setStyle(document.body, 'transition-property', 'all');
+      this.renderer.setStyle(document.body, 'transition-duration', '0.4s');
+    } else {
+      // Reset the position of the main element when the sidebar is closed
+      // this.renderer.removeStyle(document.body, 'position');
+      // this.renderer.removeStyle(document.body, 'left');
+      this.renderer.setStyle(document.body, 'margin-left', '0px');
+      this.renderer.setStyle(document.body, 'transition-timing-function', 'ease');
+      this.renderer.setStyle(document.body, 'transition-property', 'all');
+      this.renderer.setStyle(document.body, 'transition-duration', '0.4s');
+    }
   }
 
   dropdown(event:any){
-    console.log(event.target.closest('li').id);
     const id = event.target.closest('li').id;
     const ulElement = this.el.nativeElement.querySelector(`.item-show-${id}`) as HTMLElement;
-    // console.log(event.target);
-    // const aElement = event.target.closest('a') as HTMLElement;
-    // console.log(aElement);
     const spanElement = event.target.querySelector('span') as HTMLElement;
-    console.log(spanElement.classList.contains('bi-caret-down'));
-    // if(spanElement.classList.contains('bi-caret-down')){
-    //   this.renderer.removeClass(spanElement,'bi-ceret-down');
-    //   this.renderer.addClass(spanElement,'bi-ceret-up');
-    //   spanElement.classList.remove('bi-caret-down');
-    //   // spanElement.classList.add('bi-ceret-up');
+    spanElement?.classList?.toggle('rotate');
+
+    // const displayValue = ulElement.style.display === 'none' || ulElement.style.display === '' ? 'block' : 'none';
+    // this.renderer.setStyle(ulElement, 'display', displayValue);
+    
+    // const displayValue = ulElement.style.display === 'none' || ulElement.style.display === '' ? true : false;
+    ulElement?.classList?.toggle('close-dropdown');
+    // console.log(this.isClicked);
+    // if(this.isClicked){
+    //   this.renderer.addClass(ulElement, 'open-dropdown');
     // }else{
-    //   this.renderer.removeClass(spanElement,'bi-ceret-up');
-    //   this.renderer.addClass(spanElement,'bi-ceret-down');
-    //   spanElement.classList.remove('bi-caret-up');
-    //   // spanElement.classList.add('bi-ceret-down');
+    //   this.renderer.removeClass(ulElement, 'open-dropdown');
     // }
-    spanElement.classList.toggle('rotate');
-    console.log(spanElement.classList.contains('bi-caret-down'));
-    const displayValue = ulElement.style.display === 'none' || ulElement.style.display === '' ? 'block' : 'none';
-    this.renderer.setStyle(ulElement, 'display', displayValue);
+    
+    // const isActive = ulElement.querySelector('.active') !== null;
+    // if(isActive){
+    //   this.renderer.setStyle(ulElement, 'display', 'block');
+    // } else {
+    //   this.renderer.setStyle(ulElement, 'display', displayValue);
+    // }
   }
 }

@@ -6,23 +6,23 @@
       Todo App
    </div>
    <ul class="main_side">
-      <li class="active"><a routerLink="/home">Dashboard</a></li>
+      <li routerLinkActive="active"><a routerLink="/home">Dashboard</a></li>
       <li id="1" (click)="dropdown($event)">
          <a>Todos
-            <span class="bi bi-caret-down"></span>
+            <span class="bi bi-caret-up"></span>
          </a>
          <ul class="item-show-1">
-            <li><a routerLink="/create-todo">Create Todo</a></li>
-            <li><a routerLink="/todos">Todo List</a></li>
+            <li routerLinkActive="active"><a routerLink="/create-todo">Create Todo</a></li>
+            <li routerLinkActive="active"><a routerLink="/todos">Todo List</a></li>
          </ul>
       </li>
       <li id="2" (click)="dropdown($event)">
          <a>Users
-            <span class="bi bi-caret-down"></span>
+            <span class="bi bi-caret-up"></span>
          </a>
          <ul class="item-show-2">
-            <li><a routerLink="/create-user">Create Todo</a></li>
-            <li><a routerLink="/users">User List</a></li>
+            <li routerLinkActive="active"><a routerLink="/create-user">Create Todo</a></li>
+            <li routerLinkActive="active"><a routerLink="/users">User List</a></li>
          </ul>
       </li>
    </ul>
