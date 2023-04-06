@@ -4,6 +4,7 @@ import { TodoService } from 'src/app/service/todo.service';
 import { Subject } from 'rxjs';
 import { error } from 'jquery';
 import { NgToastService } from 'ng-angular-popup';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -18,7 +19,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   constructor(
     private todoService : TodoService,
-    private toast : NgToastService
+    private toast : NgToastService,
+    private route: ActivatedRoute
   ){
     this.todos = [];
     this.isLoading = true;
@@ -36,17 +38,22 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   private getTodos(){
     this.isLoading = true;
-    this.todoService.getTodos().subscribe(
-      (response: Todo[])=>{
-        this.todos = response;
-        this.dtOptions.data = this.todos;
-        this.dtTrigger.next(this.todos);
-        this.isLoading = false;
-      },error=>{
-        this.isLoading = false;
-        this.toast.error({detail:"ERROR", summary:'Something Went Wrong!', duration:5000});
-      }
-    );
+    this.route.queryParams.subscribe(params => {
+      const status = params['status'];
+      this.todoService.getTodos(status).subscribe(
+        (response: Todo[])=>{
+          this.todos = response;
+          this.dtOptions.data = this.todos;
+          this.dtTrigger.next(this.todos);
+          this.isLoading = false;
+        },error=>{
+          this.isLoading = false;
+          this.toast.error({detail:"ERROR", summary:'Something Went Wrong!', duration:5000});
+        }
+      );
+    });
+    
+    
   }
 
   public completeTodo(id: any){

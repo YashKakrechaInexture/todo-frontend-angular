@@ -29,12 +29,13 @@
                         <td>{{todo?.description}}</td>
                         <td>{{todo?.user?.email}}</td>
                         <td>
-                            <div *ngIf="todo?.status==='TODO'; else btn">
+                            <!-- <div *ngIf="todo?.status==='TODO'; else btn">
                                 <button class="btn btn-success" (click)="completeTodo(todo?.id)">Complete</button>
                             </div>
                             <ng-template #btn>
                                 COMPLETED
-                            </ng-template>
+                            </ng-template> -->
+                            {{todo?.status}}
                         </td>
                     </tr>
                 </ng-template>

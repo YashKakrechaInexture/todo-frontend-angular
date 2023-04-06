@@ -1,7 +1,7 @@
 <div class="content">
     <div class="filter-icons">
         <div *ngFor="let filterIcon of filterIcons" class="col-md-2 outer-icon-box">
-            <div class="inner-icon-box text-center btn" [class]="filterIcon.css">
+            <div class="inner-icon-box text-center btn" [class]="filterIcon.css" routerLink="/todos" [queryParams]="{ status: filterIcon.status }">
                 <label class="heading">{{filterIcon.title}}</label>
                 <label class="value">{{filterIcon.value}}</label>
             </div>
@@ -10,5 +10,13 @@
             <label class="heading">To Do</label>
             <label class="value">0</label>
         </div> -->
+    </div>
+    <div class="">
+        <div class="col-md-6 charts">
+            <app-pie-chart></app-pie-chart>
+        </div>
+        <div class="col-md-6 charts">
+            <app-bar-chart></app-bar-chart>
+        </div>
     </div>
 </div>

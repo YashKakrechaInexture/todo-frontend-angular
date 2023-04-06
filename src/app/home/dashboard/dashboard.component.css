@@ -14,3 +14,9 @@
 .heading, .value{
     width: 100%;
 }
+.charts{
+    display: inline-block;
+}
+.filter-icons{
+    margin-bottom: 50px;
+}

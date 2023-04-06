@@ -20,6 +20,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { BarChartComponent } from './home/charts/bar-chart/bar-chart.component';
+import { PieChartComponent } from './home/charts/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
     CreateUserComponent,
     UserListComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    BarChartComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,11 @@ export class TodoService {
   ) { 
   }
 
-  getTodos(){
-    return this.httpClient.get<Todo[]>(this.hostname);
+  getTodos(status: String){
+    if(status===undefined){
+      return this.httpClient.get<Todo[]>(this.hostname);
+    }
+    return this.httpClient.get<Todo[]>(this.hostname+"?status="+status);
   }
 
   getTodoById(id: number){
