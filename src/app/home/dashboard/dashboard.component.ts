@@ -10,57 +10,63 @@ import { DashboardService } from 'src/app/service/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor (
-    private dashboardService : DashboardService
-  ){}
+  private size: number = 6;
 
-  filterIcons: FilterIcon[] = [
-    {
-      title: "To Do",
-      value: 0,
-      css: "btn-info",
-      status: "TODO"
-    },
-    {
-      title: "In Progress",
-      value: 0,
-      css: "btn-primary",
-      status: "IN_PROGRESS"
-    },
-    {
-      title: "Completed",
-      value: 0,
-      css: "btn-success",
-      status: "COMPLETED"
-    },
-    {
-      title: "On Hold",
-      value: 0,
-      css: "btn-warning",
-      status: "ON_HOLD"
-    },
-    {
-      title: "Cancelled",
-      value: 0,
-      css: "btn-secondary",
-      status: "CANCELLED"
-    },
-    {
-      title: "Over Due",
-      value: 0,
-      css: "btn-danger",
-      status: "OVERDUE"
-    }
+  titles: String[] = [
+    "To Do",
+    "In Progress",
+    "Completed",
+    "On Hold",
+    "Cancelled",
+    "Over Due"
   ];
+
+  private status: String[] = [
+    "TODO",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "ON_HOLD",
+    "CANCELLED",
+    "OVERDUE"
+  ];
+
+  private buttonColors: String[] = [
+    "btn-info",
+    "btn-primary",
+    "btn-success",
+    "btn-warning",
+    "btn-secondary",
+    "btn-danger"
+  ];
+
+  values: number[] = [];
+
+  filterIcons: FilterIcon[] = [];
+
+  constructor(
+    private dashboardService: DashboardService
+  ) {
+    for (let i = 0; i < this.size; i++) {
+      this.filterIcons.push({
+        title: this.titles[i],
+        value: 0,
+        css: this.buttonColors[i],
+        status: this.status[i]
+      });
+    }
+  }
+
   ngOnInit(): void {
     this.dashboardService.getSummary().subscribe(
-      (response : TodoSummary)=>{
+      (response: TodoSummary) => {
+        this.values.push(1);
         this.filterIcons[0].value = response.TODO;
         this.filterIcons[1].value = response.IN_PROGRESS;
         this.filterIcons[2].value = response.COMPLETED;
         this.filterIcons[3].value = response.ON_HOLD;
         this.filterIcons[4].value = response.CANCELLED;
         this.filterIcons[5].value = response.OVERDUE;
+        console.log(this.values);
       }
     );
   }
