@@ -20,3 +20,18 @@
 .filter-icons{
     margin-bottom: 50px;
 }
+#pie-chart-container{
+    width: 400px;
+    height: 500px;
+}
+#bar-chart-container{
+    width: 700px;
+    height: 500px;
+}
+.chart-inner-div{
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.chart-outer-div{
+    margin: 10px;
+}

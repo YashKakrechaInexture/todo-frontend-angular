@@ -11,15 +11,24 @@
             <label class="value">0</label>
         </div> -->
     </div>
-    <div class="">
+    <div class="charts-div">
         <div class="col-md-6 charts">
-            <app-pie-chart 
-            [labels]="titles"
-            [dataValues]="values"
-            ></app-pie-chart>
+            <div class="chart-outer-div">
+                <div class="chart-inner-div">
+                    <div id="pie-chart-container" class="chart-container d-block mx-auto">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-6 charts">
-            <app-bar-chart></app-bar-chart>
+            <div class="chart-outer-div">
+                <div class="chart-inner-div">
+                    <div id="bar-chart-container" class="chart-container d-block mx-auto">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
