@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Chart } from 'chart.js/auto';
 import { FilterIcon } from 'src/app/model/filter-icon.model';
 import { TodoSummary } from 'src/app/model/todo-summary.model';
 import { DashboardService } from 'src/app/service/dashboard.service';

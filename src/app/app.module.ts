@@ -16,12 +16,9 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgToastModule } from 'ng-angular-popup';
-import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
-import { BarChartComponent } from './home/charts/bar-chart/bar-chart.component';
-import { PieChartComponent } from './home/charts/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +33,7 @@ import { PieChartComponent } from './home/charts/pie-chart/pie-chart.component';
     CreateUserComponent,
     UserListComponent,
     SidebarComponent,
-    DashboardComponent,
-    BarChartComponent,
-    PieChartComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
