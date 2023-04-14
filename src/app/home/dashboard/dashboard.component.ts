@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   private size: number = 6;
 
-  titles: String[] = [
+  private titles: String[] = [
     "To Do",
     "In Progress",
     "Completed",
@@ -83,16 +83,12 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-
   createPieChart() {
-    // console.log("create chart");
-    // console.log(this.dataValues);
     const data = {
       labels: this.titles,
       datasets: [{
         label: 'Pie Chart Todos',
         data: this.values,
-        // [1,2,3,4,5,6],
         // backgroundColor: [
         //   'rgb(255, 99, 132)',
         //   'rgb(54, 162, 235)',
@@ -129,5 +125,4 @@ export class DashboardComponent implements OnInit {
       data: data
     });
   }
-
 }
